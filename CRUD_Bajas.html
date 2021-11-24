@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Castech</title>
+    <link rel="preload" href="Proyecto_CSS/normalize.css" as="normalize">
+    <link rel="stylesheet" href="Proyecto_CSS/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Krub:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="Estilo.css">
+    <link href="img/Logotipo.png" rel="shortcut icon">
+</head>
+<body>
+
+    <header class = "titulo">
+        <h1>
+            <img class="titulo__imagen" src="img/Logotipo.png" alt="Nintendo"> Castech 
+         </h1>
+    </header>
+
+    <div class=" nav-bg">
+        <nav class="navegacion-principal contenedor">
+            <a href="CRUD_Altas.html">Altas</a>
+            <a href="CRUD_Bajas.html">Bajas</a>
+            <a href="CRUD_Cambios.html">Cambios</a>
+        </nav>
+    </div>
+
+    <main class="contenedor sombra">
+
+        <div id="contacto" class="contacto">
+            <h1><center>Bajas</h1>
+                <br><br>
+            <form class="formulario" action="CRUD_Bajas.php"  method="get" ENCTYPE = "Text/Plain">
+
+                <fieldset>
+                    <legend>Ingrese los datos del producto</legend>
+                    <br>
+
+                    <div class="contenedor-campos_CRUD">
+
+                        <div class="campo_CRUD">
+                            <label>Id del producto</label>
+
+                            <input class="input-text" type="text" name="id" placeholder="Id producto" required>
+                        </div>
+                    <br>
+                    <div class = "alinear-derecha flex">
+                        
+                        <!--<div class="enviar"> -->
+                            <input class="boton w-sm-100" type="submit" value="Eliminar" >
+                        </div>
+                    
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <br>
+</main>
+
+
+    <br><br>
+    <footer class="footer">
+        <p>Todos los derechos reservados. Castech </p>
+        <p>Juan Ricardo Castañeda Avalos </p>
+        <p>Frida Paola Palacios Gómez </p>
+    </footer>
+
+</body>
+</html>

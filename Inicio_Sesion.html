@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Castech</title>
+    <link rel="preload" href="Proyecto_CSS/normalize.css" as="normalize">
+    <link rel="stylesheet" href="Proyecto_CSS/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Krub:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="Estilo.css">
+    <link href="img/Logotipo.png" rel="shortcut icon">
+</head>
+
+<body>
+
+    <header class = "titulo">
+        <h1> <img class="titulo__imagen" src="img/Logotipo.png" alt="Nintendo"> Castech </h1>
+    </header>
+
+    <div class=" nav-bg">
+        <nav class="navegacion-principal contenedor">
+            <a href="index.html">Inicio</a>
+            <a href="Consolas.html">Consolas</a>
+            <a href="Videojuegos.html">Videojuegos</a>
+            <a href="Accesorios.html">Accesorios</a>
+            <a href="Nosotros.html">Nosotros</a>
+            <a href="Contacto.html">Contacto</a>
+        </nav>
+    </div>
+<br>
+        
+        <main class="contenedor sombra">
+
+            <div id="sesion" class="sesion">
+                <h1><center>Inicia sesión</h1>
+                    <br><br>
+                <form class="formulario_sesion" method="get" ENCTYPE = "Text/Plain" action="Inicio_Sesion.php">
+
+                    <fieldset>
+                        
+                        <br>
+
+                        <div class="contenedor-campos_">
+
+                            <div class="campo_">
+                                <label>Usuario:</label>
+
+                                <input class="input-text_" type="text" name="Usuario" placeholder="Usuario" required>
+                            </div>
+
+                            <div class="campo_">
+                                <label>Contraseña:</label>
+
+                                <input class="input-text_" type="password" name="contrasena" placeholder="Contraseña">
+                            </div>
+
+                            <div class="Registro">
+                                <a href="Registro.html"> Registrarse</a>
+                            </div>
+
+                        </div><!--.contenedor-campos-->
+
+                        <div class = "alinear-centro flex">
+                            
+                            <!--<div class="enviar"> -->
+                                <button class="boton w-sm-100"  type="submit" name= "Ingresar" value="Ingresar" >Ingresar</button>
+                            </div>
+                        
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <br><br>
+    <footer class="footer">
+        <p>Todos los derechos reservados. Castech </p>
+        <p>Juan Ricardo Castañeda Avalos </p>
+        <p>Frida Paola Palacios Gómez </p>
+    </footer>
+
+</body>
+</html>
