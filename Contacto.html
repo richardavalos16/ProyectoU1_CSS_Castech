@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Castech</title>
-    <link rel="preload" href="Proyecto_CSS/normalize.css" as="normalize">
-    <link rel="stylesheet" href="Proyecto_CSS/normalize.css">
+    <link rel="preload" href="CSS/normalize.css" as="normalize">
+    <link rel="stylesheet" href="CSS/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Krub:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="Estilo.css">
+    <link rel="stylesheet" href="CSS/Estilo.css">
     <link href="img/Logotipo.png" rel="shortcut icon">
 </head>
 
@@ -16,22 +16,14 @@
 
     <header class = "titulo">
         <h1> 
-            <img class="titulo__imagen" src="img/Logotipo.png" alt="Nintendo"> Castech 
-            <div class=" nav-bg_1">
-                <nav class="navegacion-principal_1 contenedor">
-                    <a  href="Inicio_Sesion.html">Iniciar Sesión</a>
-                    <a  href="Carrito.html"><img src="img/Carrito.png" alt="Nintendo"></a>
-                </nav>
-            </div> 
+            <img class="titulo__imagen" src="img/Logotipo.png" alt="Nintendo"> Castech  
          </h1>
     </header>
 
     <div class=" nav-bg">
         <nav class="navegacion-principal contenedor">
             <a href="index.html">Inicio</a>
-            <a href="Consolas.html">Consolas</a>
-            <a href="Videojuegos.html">Videojuegos</a>
-            <a href="Accesorios.html">Accesorios</a>
+            <a href="productos.php">Productos</a>
             <a href="Nosotros.html">Nosotros</a>
             <a href="Contacto.html">Contacto</a>
         </nav>
@@ -43,7 +35,7 @@
             <div id="contacto" class="contacto">
                 <h1><center>Contacto</h1>
                     <br><br>
-                <form class="formulario" action="mailto:frida090501@gmail.com"  method="POST" ENCTYPE = "Text/Plain">
+                <form class="formulario"  name="formulario" onSubmit="return compruebaContacto()" action="mailto:frida090501@gmail.com"  method="POST" ENCTYPE = "Text/Plain">
 
                     <fieldset>
                         <legend>Contactános llenando todos los campos</legend>
@@ -60,13 +52,13 @@
                             <div class="campo">
                                 <label>Teléfono</label>
 
-                                <input class="input-text" type="tel" name="telefono" placeholder="Teléfono">
+                                <input class="input-text" type="tel" name="telefono" id="telefono" placeholder="Teléfono">
                             </div>
 
                             <div class="campo">
                                 <label>Correo</label>
 
-                                <input class="input-text" type="mail" name="correo" placeholder="Mail">
+                                <input class="input-text" type="mail" name="correo" id="correo" placeholder="Mail">
                             </div>
 
                             <div class="campo">
@@ -95,6 +87,8 @@
         <p>Juan Ricardo Castañeda Avalos </p>
         <p>Frida Paola Palacios Gómez </p>
     </footer>
+
+    <script src="JS/Validar.js"></script>
 
 </body>
 </html>

@@ -1,18 +1,7 @@
 <?php
-    $dbhost = "localhost"; //host donde esta la base de datos
-   	$dbname = "castech"; //nombre de BD
-   	$dbuser = "root"; // user name
-   	$dbpass = ""; // password de usuario
+    include "global/config.php";
+    include "global/conexion.php";
 
-     $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-
-     if (!$db)
-     {
-       echo "Error en la conexion";
-       exit;
-     }
-     else
-     {
        if (($_GET['id'] != ""))
         {	 
           $id = $_GET["id"];
@@ -20,12 +9,9 @@
           echo "Se elimino: <br>";
           echo "Id: ".$id."<br>";
           
-          $sql = "DELETE FROM `producto` WHERE `ID_PRODUCTO` =$id";
+          $sql =$pdo->prepare("DELETE FROM `productos` WHERE `ID` =$id");
 
-          mysqli_query($db,"SELECT * FROM `producto`");
-          mysqli_query($db,$sql); 
-          mysqli_close($db);
+          $sql->execute();
         } 
-     }
 
      include "CRUD_Bajas.html";

@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Castech</title>
-    <link rel="preload" href="Proyecto_CSS/normalize.css" as="normalize">
-    <link rel="stylesheet" href="Proyecto_CSS/normalize.css">
+    <link rel="preload" href="CSS/normalize.css" as="normalize">
+    <link rel="stylesheet" href="CSS/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Krub:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="Estilo.css">
+    <link rel="stylesheet" href="CSS/Estilo.css">
     <link href="img/Logotipo.png" rel="shortcut icon">
 </head>
 
@@ -21,9 +21,7 @@
     <div class=" nav-bg">
         <nav class="navegacion-principal contenedor">
             <a href="index.html">Inicio</a>
-            <a href="Consolas.html">Consolas</a>
-            <a href="Videojuegos.html">Videojuegos</a>
-            <a href="Accesorios.html">Accesorios</a>
+            <a href="productos.php">Productos</a>
             <a href="Nosotros.html">Nosotros</a>
             <a href="Contacto.html">Contacto</a>
         </nav>
@@ -35,7 +33,7 @@
             <div id="sesion" class="sesion">
                 <h1><center>Registro</h1>
                     <br><br>
-                <form class="formulario_sesion" method="get" ENCTYPE = "Text/Plain" action="Registro.php">
+                <form class="formulario_sesion" name="formulario" onSubmit="return compruebaRegistro()" method="GET" ENCTYPE = "Text/Plain" action="Registro.php" >
 
                     <fieldset>
                         
@@ -46,38 +44,39 @@
                             <div class="campo_">
                                 <label>Nombres:</label>
 
-                                <input class="input-text_" type="text" name="nombres" placeholder="Nombres" required>
+                                <input class="input-text_" type="text" name="nombres" id="nombres" placeholder="Nombres" required>
                             </div>
 
                             <div class="campo_">
                                 <label>Apellidos:</label>
 
-                                <input class="input-text_" type="text" name="apellidos" placeholder="Apellidos">
+                                <input class="input-text_" type="text" name="apellidos" id="apellidos" placeholder="Apellidos">
                             </div>
 
                             <div class="campo_">
                                 <label>Usuario:</label>
 
-                                <input class="input-text_" type="text" name="Usuario" placeholder="Usuario" required>
+                                <input class="input-text_" type="text" name="usuario" id="usuario" placeholder="Usuario">
                             </div>
 
                             <div class="campo_">
                                 <label>Correo:</label>
 
-                                <input class="input-text_" type="email" name="correo" placeholder="Correo" required>
+                                <input class="input-text_" type="email" name="correo" id="correo" placeholder="Correo">
                             </div>
                             
                             <div class="campo_">
                                 <label>Contraseña:</label>
 
-                                <input class="input-text_" type="password" name="contrasena" placeholder="Contraseña" required>
+                                <input class="input-text_" type="password" name="contrasena" id="contrasena" placeholder="Contraseña">
                             </div>
 
                         </div><!--.contenedor-campos-->
 
                         <div class = "alinear-centro flex">
                             
-                                <button class="boton w-sm-100"  type="submit" name = "Registro" value="Registrarse">Registrarse</button>
+                            <!--<div class="enviar"> -->
+                                <input class="boton w-sm-100"  type="submit" value="Registrarse" >
                             </div>
                         
                     </fieldset>
@@ -92,6 +91,8 @@
         <p>Juan Ricardo Castañeda Avalos </p>
         <p>Frida Paola Palacios Gómez </p>
     </footer>
+
+    <script src="JS/Validar.js"></script>
 
 </body>
 </html>

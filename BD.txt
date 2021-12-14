@@ -1,0 +1,168 @@
+CREATE DATABASE CASTECH_BD
+
+CREATE TABLE PRODUCTOS
+(
+	ID INT NOT NULL AUTO_INCREMENT,
+	NOMBRE VARCHAR (255),
+	PRECIO DECIMAL (20,2),
+	IMAGEN VARCHAR (255),
+    	EXISTENCIA INT, 
+	PRIMARY KEY(ID)
+);
+
+CREATE TABLE VENTAS
+(
+	ID INT NOT NULL AUTO_INCREMENT,
+	CLAVE_TRANSACCION VARCHAR (250),
+	PAYPAL_DATOS TEXT,
+	FECHA DATETIME,
+    	CORREO VARCHAR (5000), 
+    	TOTAL DECIMAL (60,2),
+    	STATUS VARCHAR (200),
+	PRIMARY KEY(ID)
+);
+
+CREATE TABLE DETALLE_VENTAS
+(
+	ID INT (11) NOT NULL AUTO_INCREMENT,
+	ID_VENTA INT (11),
+	ID_PRODUCTO INT (11),
+	PRECIO_UNITARIO DECIMAL (20, 2),
+    CANTIDAD INT (11), 
+    DESCARGADO INT (1),
+	PRIMARY KEY(ID)
+);
+
+CREATE TABLE USUARIOS
+(
+	ID INT NOT NULL AUTO_INCREMENT,
+	NOMBRES VARCHAR (50),
+	APELLIDOS VARCHAR (50),
+	USERNAME VARCHAR (20),
+	CORREO VARCHAR (50),
+	CONTRASENA VARCHAR (20),
+	PRIMARY KEY (ID)
+);S
+
+ALTER TABLE detalle_ventas
+	ADD CONSTRAINT FK_ID_VENTA
+	FOREIGN KEY (ID_VENTA) REFERENCES ventas(ID)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE;
+    
+ALTER TABLE detalle_ventas
+	ADD CONSTRAINT FK_ID_PRODUCTO
+	FOREIGN KEY (ID_PRODUCTO) REFERENCES productos(ID)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE;
+
+/*-- CONSOLAS --*/
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA) 
+VALUES ('Consola PS4 1TB Mega Pack', 8499.00, 'img/1.jpg', 50);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Consola PS4 1TB Mega Pack', 9799.00, 'img/2.jpg', 35);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Consola PS4 Virtual Reality Mega Pack', 9699.00, 'img/3.jpg', 45);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Consola PS5 Standard Edition 825 GB' , 13999.00, 'img/4.jpg', 20);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Consola PS5 Digital Edition 825 GB', 11499.00, 'img/5.jpg', 25);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Consola Xbox Series X 1TB', 13999.00, 'img/6.jpg', 60);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Consola Xbox Series S 512 GB', 8490.00, 'img/7.jpg', 55);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Consola Nintendo Switch Standard Edition 32 G', 7682.00, 'img/8.jpg', 45);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Consola Nintendo Switch Lite 32 GB' , 5492.00, 'img/9.jpg', 70);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Consola Nintendo Switch Oled 32 GB', 9999.00, 'img/10.jpg', 25);
+
+/* Accesorios */
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Funda de Nintendo Switch, soporte para 12 tarjetas de juego de cuero', 210.00, 'img/11.jpg', 100);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Joy-Con Charging Grip para Nintendo Switch', 1335.00, 'img/12.jpg', 150);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Control Nintendo para Switch', 1900.00, 'img/13.jpg', 145);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Controles de PlayStation Move Motion' , 2765.00, 'img/14.jpg', 90);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Control Multimedia para PS5', 700.00, 'img/15.jpg', 85);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Auriculares Inalámbricos PS5 Pulse 3D', 2349.00, 'img/16.jpg', 160);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Funda para Mando de PS5', 159.00, 'img/17.jpg', 115);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Cargador Dual Mcbazel para PS5', 480.00, 'img/18.jpg', 130);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Base de Enfilamiento para Xbox Series X' , 825.00, 'img/19.jpg', 70);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Adaptador Inalámbrico para Xbox', 817.00, 'img/20.jpg', 125);
+
+/* Videojuegos */
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('FIFA 22 para PS5 Standard Edition', 1499.00, 'img/21.jpg', 200);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Ratchet & Clank: Rift Apart para PS5 Standard Edition', 1529.00, 'img/22.jpg', 270);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Far Cry 6 para PS5 Standard Edition', 1447.00, 'img/23.jpg', 145);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Final Fantasy VII Remake Intergrade para PS5 Standard Edition' , 1249.00, 'img/24.jpg', 180);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Back 4 Blood para PS5 Standard Edition', 1899.00, 'img/25.jpg', 153);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Tom Clancy’s Rainbow Six Siege para Xbox One/Series X Deluxe Edition', 754.00, 'img/26.jpg', 106);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Devil May Cry 5 para Xbox Series X Special Edition', 899.00, 'img/27.jpg', 194);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Halo Infinite para Xbox Series X Standard Edition', 1499.00, 'img/28.jpg', 146);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Lego Marvel Collection para Xbox One Standard Edition' , 347.00, 'img/29.jpg', 195);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Resident Evil: Village Deluxe para Xbox One Limited Edition', 1249.00, 'img/30.jpg', 140);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Metroid Dread para Nintendo Switch Standard Edition' , 1299.00, 'img/31.jpg', 195);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('WarioWare: Get It Together! para Nintendo Switch Standard Edition', 999.00, 'img/32.jpg', 140);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Mario Party Superstars para Nintendo Switch Standard Edition', 1349.00, 'img/33.jpg', 150);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Just Dance 2020 para Nintendo Switch Limited Edition', 549.00, 'img/34.jpg', 170);
+
+INSERT INTO productos (NOMBRE, PRECIO, IMAGEN, EXISTENCIA)
+VALUES ('Super Smash Bros Ultimate para Nintendo Switch Standard Edition', 1299.00, 'img/35.jpg', 95);

@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Castech</title>
-    <link rel="preload" href="Proyecto_CSS/normalize.css" as="normalize">
-    <link rel="stylesheet" href="Proyecto_CSS/normalize.css">
+    <link rel="preload" href="CSS/normalize.css" as="normalize">
+    <link rel="stylesheet" href="CSS/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Krub:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="Estilo.css">
+    <link rel="stylesheet" href="CSS/Estilo.css">
     <link href="img/Logotipo.png" rel="shortcut icon">
 </head>
 <body>
@@ -33,7 +33,7 @@
         <div id="contacto" class="contacto">
             <h1><center>Altas</h1>
                 <br><br>
-            <form class="formulario"  action="CRUD_Altas.php" method="GET" ENCTYPE = "Text/Plain" >
+            <form class="formulario" name="formulario" onSubmit="return compruebaAltas()" action="CRUD_Altas.php" method="GET" ENCTYPE = "Text/Plain" >
 
                 <fieldset>
                     <legend>Ingrese los datos del producto</legend>
@@ -45,6 +45,12 @@
                             <label>Nombre</label>
 
                             <input class="input-text" type="text" name="nombre" placeholder="Nombre" required>
+                        </div>
+
+                        <div class="campo_CRUD">
+                            <label>Imagen</label>
+
+                            <input class="input-text" type="text" name="imagen" placeholder="Imagen">
                         </div>
 
                         <div class="campo_CRUD">
